@@ -26,6 +26,6 @@ class VideoCamera(object):
             m=d[n]
             if n==0: cv2.putText(frame,m,(x,y),font,1,(0,0,240),2)
             if n==1: cv2.putText(frame,m,(x,y),font,1,(0,255,0),2)
-        #res = cv2.resize(frame,None,fx=1.6, fy=1.5, interpolation = cv2.INTER_CUBIC)
-        ret,jpeg=cv2.imencode('.jpg',frame)
+        res = cv2.resize(frame,None,fx=1.4, fy=1.3, interpolation = cv2.INTER_CUBIC)
+        ret,jpeg=cv2.imencode('.jpg',res)
         return jpeg.tobytes()
